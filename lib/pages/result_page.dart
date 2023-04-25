@@ -40,7 +40,7 @@ class ResultPage extends StatelessWidget {
             Center(
               child: Container(
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
+                  borderRadius: BorderRadius.circular(14),
                   color: AppColors.mainColor,
                 ),
                 height: MediaQuery.of(context).size.height * 0.6,
@@ -68,7 +68,7 @@ class ResultPage extends StatelessWidget {
           ],
         ),
         bottomNavigationBar: CalculateWidget(
-          text: 'Re-Calculate',
+          text: 'Чыгуу',
           onTap: () {
             Navigator.pop(context);
           },

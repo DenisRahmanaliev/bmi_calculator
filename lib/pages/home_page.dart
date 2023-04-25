@@ -16,9 +16,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  double height = 120;
+  double height = 80;
   int weight = 40;
-  int age = 30;
+  int age = 20;
 
   Color maleColor = AppColors.inactiveColor;
   Color femaleColor = AppColors.inactiveColor;
@@ -30,7 +30,7 @@ class _HomePageState extends State<HomePage> {
     return Material(
       child: SafeArea(
         child: Scaffold(
-          backgroundColor: Color(0xff201834),
+          backgroundColor: Color.fromARGB(255, 40, 9, 118),
           body: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
@@ -41,7 +41,7 @@ class _HomePageState extends State<HomePage> {
                   CustomContainerWidget(
                     isSelectedFemale: false,
                     isSelectedMale: false,
-                    text: 'male',
+                    text: 'Бала',
                     icon: Icons.male,
                     onTap: () {
                       setState(() {
@@ -101,7 +101,7 @@ class _HomePageState extends State<HomePage> {
                   CustomContainerWidget(
                     isSelectedFemale: false,
                     isSelectedMale: false,
-                    text: 'female',
+                    text: 'Кыз',
                     icon: Icons.female,
                     color: femaleColor,
                     onTap: () {
@@ -119,7 +119,7 @@ class _HomePageState extends State<HomePage> {
                 height: size.height * 0.25,
                 width: size.width * 0.87,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
+                  borderRadius: BorderRadius.circular(14),
                   color: AppColors.mainColor,
                 ),
                 child: Column(
@@ -127,7 +127,7 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     Center(
                       child: Text(
-                        'HEIGHT',
+                        'Бою',
                         style: TextStyle(
                           fontSize: 35,
                           color: Colors.white.withOpacity(0.8),
@@ -149,7 +149,7 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                         Text(
-                          'cm',
+                          'см',
                           style: TextStyle(
                             fontSize: 35,
                             color: Colors.white.withOpacity(0.8),
@@ -180,7 +180,7 @@ class _HomePageState extends State<HomePage> {
                   WeightAgeWidget(
                     tag1: '3',
                     tag2: '4',
-                    text: 'Weight',
+                    text: 'Салмак',
                     numberText: weight.toString(),
                     minus: () {
                       setState(() {
@@ -199,7 +199,7 @@ class _HomePageState extends State<HomePage> {
                   WeightAgeWidget(
                     tag1: '1',
                     tag2: '2',
-                    text: 'Age',
+                    text: 'Жаш',
                     numberText: age.toString(),
                     minus: () {
                       setState(() {
@@ -217,15 +217,17 @@ class _HomePageState extends State<HomePage> {
             ],
           ),
           bottomNavigationBar: CalculateWidget(
-            text: 'Calculate',
+            text: 'Текшеруу',
             onTap: () {
               Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => ResultPage(
-                            heightResult: height,
-                            weightResult: weight,
-                          )));
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ResultPage(
+                    heightResult: height,
+                    weightResult: weight,
+                  ),
+                ),
+              );
             },
           ),
         ),

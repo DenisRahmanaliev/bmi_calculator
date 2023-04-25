@@ -1,3 +1,3 @@
 class AppTexts {
-  static const String result = 'Result';
+  static const String result = 'Натыйжа';
 }
